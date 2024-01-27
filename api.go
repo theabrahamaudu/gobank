@@ -30,12 +30,14 @@ func makeHTTPHandlerFunc(f apiFunc) http.HandlerFunc {
 }
 
 type APIServer struct {
-	listenAddr string
+	listenAddr 	string
+	store 	 	storage
 }
 
-func NewAPIServer(listenAddr string) *APIServer {
+func NewAPIServer(listenAddr string, store storage) *APIServer {
 	return &APIServer{
-		listenAddr: listenAddr,
+		listenAddr:	listenAddr,
+		store: 		store,
 	}
 }
 
